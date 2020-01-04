@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: zonesperweek
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5Dialect
+  main:
+    allow-bean-definition-overriding: true # TODO: Find how to remove this
+
+server:
+  port: 8888
+
+security:
+  oauth2:
+    client:
+      client-id: 42199
+      #client-secret: 23dc8b0f607c2fd59be0adadd63e4fec1e1180f0
+      client-secret: 2e3e3a749088d8267179d68e59f8b065c5dcec72
+      access-token-uri: https://www.strava.com/api/v3/oauth/token
+      user-authorization-uri: https://www.strava.com/oauth/authorize
+      token-name: access_token
+      client-authentication-scheme: form
+      scope: activity:read_all
+    resource:
+      user-info-uri: https://www.strava.com/api/v3/athlete
+
+logging:
+  level:
+    org:
+      apache:
+        http:
+          wire: DEBUG
